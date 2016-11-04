@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-dmenu_path | dmenu | ${SHELL:-"/bin/sh"}
+
+dmenu_path | dmenu $@ | ${SHELL:-"/bin/sh"}
