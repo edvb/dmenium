@@ -12,7 +12,7 @@ cmd=$(echo -e "$menu_list" | eval "$dmenucmd")
 
 case $cmd in
 	*run)
-		"$HOME"/.config/dmenu/prog.sh -c -l 20 ;;
+		dmenu_prog -c -l 20 ;;
 	*term)
 		tabbed -c st -w ;;
 	*web)
@@ -20,19 +20,19 @@ case $cmd in
 	*file)
 		thunar > /dev/null 2>&1 ;;
 	*edit) # TODO dont open if dmenu returned empty
-		st -e vim -p "$("$HOME"/.config/dmenu/browse.sh -c)" ;;
-	*view) # TODO replace with browse.sh and feh
-		geeqie "$HOME"/pictures/ ;;
+		st -e vim -p "$(dmenu_browse -c)" ;;
+	*view)
+		sxiv "$(dmenu_browse -c)" ;;
 	*todo)
-		"$HOME"/.config/dmenu/todo.sh -c ;;
+		dmenu_todo -c ;;
 	*calc)
-		"$HOME"/.config/dmenu/calc.sh -c -l 1;;
+		dmenu_calc -c -l 1;;
 	*man)
-		st -e man $("$HOME"/.config/dmenu/man.sh -c -l 20) ;;
+		st -e man $(dmenu_man -c -l 20) ;;
 	*htop)
 		st -g 68x6 -e htop ;;
 	*exit)
-		# "$HOME"/.config/dmenu/quit.sh -c ;;
+		# dmenu_quit -c ;;
 		cbpp-exit ;;
 	*)
 		$cmd
