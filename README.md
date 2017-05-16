@@ -1,14 +1,25 @@
-# Dmenu-Scripts
+# dmenium - small collection of dmenu scripts
 
-A small collection of scripts that use dmenu.
+ * [browse](browse): return selected file or folder
+ * [calc](calc): calculator using bc
+ * [dwm-mode](dwm_mode): change dwm window mode
+ * [man](man): open man page in terminal
+ * [menu](menu): select different programs or dmenu scripts
+ * [prog](prog): launch program
+ * [todo](todo): view, add or delete todos from a file
+ * [win](win): focus on an open window
 
-## Installation
+## SEE ALSO
 
-Move the scripts you want to use somewhere into your $PATH or other permanent
-location. Then use a hotkey manager to bind a key of your choice to the
-file name if in your $PATH, or its normal path if in a random folder.
+View source code at: <https://gitlab.com/edvb/dmenu-scripts>
 
-## Licence
+`dmenu(1)` `dmenu_path(1)` `dmenu_run(1)`
+
+## AUTHOR
+
+Ed van Bruggen <edvb54@gmail.com>
+
+## LICENCE
 
 zlib License
 
