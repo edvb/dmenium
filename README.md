@@ -3,6 +3,7 @@
  * [browse](browse): return selected file or folder
  * [calc](calc): calculator using bc
  * [dwm-mode](dwm_mode): change dwm window mode
+ * [m8ball](m8ball): magic 8 ball
  * [man](man): open man page in terminal
  * [menu](menu): select different programs or dmenu scripts
  * [prog](prog): launch program
