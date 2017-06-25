@@ -28,7 +28,9 @@ case $cmd in
 	*calc)
 		dmenu_calc -c -l 1;;
 	*man)
-		st -e man $(dmenu_man -c -l 20) ;;
+		manprog=$(dmenu_man -c -l 20)
+		manname=$(echo "$manprog" | cut -d " " -f 2)
+		st -t "$manname" -e man $manprog ;;
 	*htop)
 		st -g 68x6 -e htop ;;
 	*exit)
