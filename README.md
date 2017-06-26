@@ -12,7 +12,7 @@
 
 ## SEE ALSO
 
-View source code at: <https://gitlab.com/edvb/dmenu-scripts>
+View source code at: <https://gitlab.com/edvb/dmenium>
 
 `dmenu(1)` `dmenu_path(1)` `dmenu_run(1)`
 
