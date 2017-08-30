@@ -6,8 +6,8 @@ draw_line () {
 	done
 }
 
-menu_list="  run\n  term\n  web\n  file\n  edit\n  view\n  todo\n  calc\n  man\n  htop\n$(draw_line)\n  exit\n"
-dmenucmd="dmenu -c -i -l 12"
+menu_list="  run\n  term\n  web\n  music\n  file\n  edit\n  view\n  todo\n  calc\n  man\n  top\n$(draw_line)\n  exit"
+dmenucmd="dmenu -c -i -l 13"
 cmd=$(echo -e "$menu_list" | eval "$dmenucmd")
 
 case $cmd in
@@ -16,7 +16,9 @@ case $cmd in
 	*term)
 		tabbed -c st -w ;;
 	*web)
-		firefox > /dev/null 2>&1 ;;
+		surf_open ;;
+	*music)
+		st -e cmus ;;
 	*file)
 		thunar > /dev/null 2>&1 ;;
 	*edit) # TODO dont open if dmenu returned empty
@@ -31,7 +33,7 @@ case $cmd in
 		manprog=$(dmenu_man -c -l 20)
 		manname=$(echo "$manprog" | cut -d " " -f 2)
 		st -t "$manname" -e man $manprog ;;
-	*htop)
+	*top)
 		st -g 68x6 -e htop ;;
 	*exit)
 		# dmenu_quit -c ;;
