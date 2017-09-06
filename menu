@@ -7,14 +7,14 @@ draw_line () {
 }
 
 menu_list="  run\n  term\n  web\n  music\n  file\n  edit\n  view\n  todo\n  calc\n  man\n  top\n$(draw_line)\n  exit"
-dmenucmd="dmenu -c -i -l 13"
+dmenucmd="dmenu -i -l 13"
 cmd=$(echo -e "$menu_list" | eval "$dmenucmd")
 
 case $cmd in
 	*run)
-		dmenu_prog -c -l 20 ;;
+		dmenu_prog -l 20 ;;
 	*term)
-		tabbed -c st -w ;;
+		tabbed st -w ;;
 	*web)
 		surf_open ;;
 	*music)
@@ -22,21 +22,21 @@ case $cmd in
 	*file)
 		thunar > /dev/null 2>&1 ;;
 	*edit) # TODO dont open if dmenu returned empty
-		st -e vim -p "$(dmenu_browse -c)" ;;
+		st -e vim -p "$(dmenu_browse)" ;;
 	*view)
-		sxiv "$(dmenu_browse -c)" ;;
+		sxiv "$(dmenu_browse)" ;;
 	*todo)
-		dmenu_todo -c ;;
+		dmenu_todo ;;
 	*calc)
-		dmenu_calc -c -l 1;;
+		dmenu_calc -l 1;;
 	*man)
-		manprog=$(dmenu_man -c -l 20)
+		manprog=$(dmenu_man -l 20)
 		manname=$(echo "$manprog" | cut -d " " -f 2)
 		st -t "$manname" -e man $manprog ;;
 	*top)
 		st -g 68x6 -e htop ;;
 	*exit)
-		# dmenu_quit -c ;;
+		# dmenu_quit ;;
 		cbpp-exit ;;
 	*)
 		$cmd
