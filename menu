@@ -24,7 +24,7 @@ case $cmd in
 	*edit) # TODO dont open if dmenu returned empty
 		st -e vim -p "$(dmenu_browse)" ;;
 	*view)
-		sxiv "$(dmenu_browse)" ;;
+		sxiv "$(dmenu_browse $HOME/pictures)" ;;
 	*todo)
 		dmenu_todo ;;
 	*calc)
