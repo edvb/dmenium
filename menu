@@ -36,8 +36,7 @@ case $cmd in
 	*top)
 		st -g 68x6 -e htop ;;
 	*exit)
-		# dmenu_quit ;;
-		cbpp-exit ;;
+		dmenu_quit -c ;;
 	*)
 		$cmd
 esac

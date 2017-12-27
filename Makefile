@@ -13,6 +13,7 @@ progs = browse \
 	man \
 	menu \
 	prog \
+	quit \
 	todo \
 	win \
 

@@ -7,6 +7,7 @@
  * [man](man): open man page in terminal
  * [menu](menu): select different programs or dmenu scripts
  * [prog](prog): launch program
+ * [quit](quit): select logout, reboot, shutdown, or lock
  * [todo](todo): view, add or delete todos from a file
  * [win](win): focus on an open window
 
