@@ -7,7 +7,7 @@ draw_line () {
 }
 
 menu_list="  run\n  term\n  web\n  music\n  file\n  edit\n  view\n  todo\n  calc\n  man\n  top\n$(draw_line)\n  exit"
-dmenucmd="dmenu -i -l 13"
+dmenucmd="dmenu -i -l $(echo -e $menu_list | wc -l)"
 cmd=$(echo -e "$menu_list" | eval "$dmenucmd")
 
 case $cmd in
