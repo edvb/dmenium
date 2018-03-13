@@ -6,7 +6,7 @@ draw_line () {
 	done
 }
 
-menu_list="  run\n  term\n  web\n  music\n  file\n  edit\n  view\n  todo\n  calc\n  man\n  top\n$(draw_line)\n  exit"
+menu_list="  run\n  term\n  web\n  music\n  mail\n  file\n  edit\n  view\n  todo\n  calc\n  man\n  top\n$(draw_line)\n  exit"
 dmenucmd="dmenu -i -l $(echo -e $menu_list | wc -l)"
 cmd=$(echo -e "$menu_list" | eval "$dmenucmd")
 
@@ -19,8 +19,10 @@ case $cmd in
 		surf_open ;;
 	*music)
 		st -e cmus ;;
+	*mail)
+		st -e mutt ;;
 	*file)
-		thunar > /dev/null 2>&1 ;;
+		pcmanfm > /dev/null 2>&1 ;;
 	*edit) # TODO dont open if dmenu returned empty
 		st -e vim -p "$(dmenu_browse)" ;;
 	*view)
@@ -36,7 +38,7 @@ case $cmd in
 	*top)
 		st -g 68x6 -e htop ;;
 	*exit)
-		dmenu_quit -c ;;
+		dmenu_quit ;;
 	*)
 		$cmd
 esac
